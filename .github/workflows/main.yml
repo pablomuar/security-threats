@@ -20,15 +20,9 @@ jobs:
         with:
           sarif_file: snyk.sarif
 
-      - name: Create zip if code is secure
-        #if: steps.snyk.conclusion != 'success'
+      - name: Archive ZIP if code is secure
         uses: ihiroky/archive-action@v1
         with:
           root_dir: .
-          file_path: secure_code.zip
-
-      - name: Upload zip to artifac
-        uses: actions/upload-artifact@v4
-        with:
-          name: zip-secure-code-artifact
-          path: secure_code.zip
+          file_path: security-threats.zip
+          verbose: true
