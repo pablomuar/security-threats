@@ -28,7 +28,7 @@ jobs:
           file_path: secure_code.zip
 
       - name: Upload zip to artifac
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: zip-secure-code-artifact
           path: secure_code.zip
